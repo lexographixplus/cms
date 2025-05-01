@@ -393,11 +393,17 @@
                return;
           }
 
-          if (e.target === logoutButton || logoutButton.contains(e.target)) {
-             e.preventDefault();
-              if(logoutButton.hasAttribute('disabled')) return;
-              window.location.replace('Login/login.html');
-          }
+if (e.target === logoutButton || logoutButton.contains(e.target)) {
+    e.preventDefault();
+    if (logoutButton.hasAttribute('disabled')) return;
+
+    // Use window.open() to open in a new tab
+    window.open('https://blog.lexographix.com', '_blank');
+
+    // Optional: If you want to ensure focus stays on the original tab after opening
+    // window.open('https://blog.lexographix.com', '_blank').blur();
+    // window.focus();
+}
 
            if (e.target === saveDraftButton || saveDraftButton.contains(e.target)) {
                 if(saveDraftButton.hasAttribute('disabled')) return;
